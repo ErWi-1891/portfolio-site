@@ -1,0 +1,308 @@
+html {
+  /* Встановлюємо основний шрифт для документа */
+  font-family: "New Amsterdam", sans-serif;
+
+  /* Створюємо змінні для висоти підвалу та шапки */
+  --footer-height: 150px;
+  --header-height: 100px;
+}
+
+/* Підсвічуємо посилання, коли на нього наводиться користувач */
+a:hover {
+  color: red;
+}
+
+/* Підсвічуємо посилання, коли з ним взаємодіє користувач */
+a:active {
+  color: darkred;
+}
+
+/* Підсвічуємо текст, коли його виділяє користувач */
+p::selection {
+  background-color: black;
+  color: white;
+}
+
+body {
+  /* Вимикаємо зовнішні відступи для тіла документа */
+  margin: 0;
+}
+
+.image-link {
+  /* Встановлюємо максимальну ширину для логотипу в шапці, автоматично підганяємо висоту */
+  max-width: 150px;
+  height: auto;
+
+  /* Вирівнюємо зображення вліво */
+  margin-right: auto;
+}
+
+.logo {
+  /* Встановлюємо максимальну ширину для логотипу, автоматично підганяємо висоту */
+  max-width: 500px;
+  height: auto;
+
+  /* Вирівнюємо логотип по центру */
+  align-items: center;
+}
+
+.header {
+  /* Встановлюємо чорний фон для шапки */
+  background-color: black;
+
+  /* Використовуємо Flexbox для вирівнювання елементів всередині шапки */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Встановлюємо розмір шрифту */
+  font-size: 30px;
+
+  /* Висота шапки відповідно до змінної */
+  height: var(--header-height);
+
+  /* Максимальна ширина шапки */
+  max-width: 100%;
+
+  /* Прибираємо зовнішні відступи */
+  margin: 0 auto;
+}
+
+.nav {
+  /* Використовуємо Flexbox для вирівнювання елементів навігації */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  /* Дозволяємо меню заповнювати весь доступний простір */
+  flex-grow: 1;
+}
+
+.nav__list {
+  /* Використовуємо Flexbox для вирівнювання пунктів меню */
+  display: flex;
+  gap: 20px;
+
+  /* Прибираємо зовнішні відступи та стандартний стиль списку */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav__link {
+  /* Вимикаємо підкреслення для посилань */
+  text-decoration: none;
+
+  /* Для полегшення клікабельності посилань*/
+  padding: 30px;
+  display: inline-block;
+
+  /* Встановлюємо білий колір тексту посилань */
+  color: white;
+}
+
+.main {
+  /* Встановлюємо, щоб розміри елементів враховували їх внутрішні поля та границі */
+  box-sizing: border-box;
+
+  /* Мінімальна висота основного блоку: розмір вікна мінус висоти шапки та підвалу */
+  min-height: calc(100vh - var(--footer-height) - var(--header-height));
+}
+
+.video-background-container {
+  /* Відносне позиціювання контейнера для відео */
+  position: relative;
+
+  /* Контейнер займає всю ширину */
+  width: 100%;
+
+  /* Висота контейнера дорівнює 86% висоти вікна браузера */
+  height: 86vh;
+
+  /* Ховаємо частини відео, які виходять за межі контейнера */
+  overflow: hidden;
+}
+
+#video-background {
+  /* Абсолютне позиціювання відео всередині контейнера */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  /* Встановлюємо мінімальні розміри відео для покриття всього контейнера */
+  min-width: 100%;
+  min-height: 100%;
+
+  /* Ширина та висота автоматично підганяються */
+  width: auto;
+  height: auto;
+
+  /* Відео буде позаду інших елементів */
+  z-index: -1;
+
+  /* Центруємо відео в контейнері */
+  transform: translate(-50%, -50%);
+}
+
+.h1 {
+  /* Вирівнювання тексту по центру */
+  text-align: center;
+
+  /* Розмір шрифту для заголовка */
+  font-size: 60px;
+
+  /* Встановлюємо верхній відступ */
+  margin-top: 10px;
+
+  /* Колір тексту */
+  color: white;
+}
+
+.logo {
+  /* Відображаємо логотип як блоковий елемент */
+  display: block;
+
+  /* Центруємо логотип за допомогою автоматичних зовнішніх відступів */
+  margin: 0 auto;
+
+  /* Встановлюємо максимальну ширину для логотипу, автоматично підганяємо висоту */
+  max-width: 500px;
+  height: auto;
+}
+
+/*.join-us {
+  height: 500px;
+  background-image: url(our-team.png);
+}*/
+
+/* Встановлюємо декоративну лінію для блоку тексту на початку... */
+.text::before {
+  content: "";
+  display: block;
+  height: 10px;
+  background-color: black;
+}
+
+/* ...та в кінці */
+.text::after {
+  content: "";
+  display: block;
+  height: 10px;
+  background-color: black;
+}
+
+.locations-container {
+  /* Фоновий колір для контейнера локацій */
+  background-color: whitesmoke;
+
+  /* Внутрішній відступ для контейнера */
+  padding: 20px;
+}
+
+.locations-container-text {
+  /* Колір тексту заголовка */
+  color: black;
+
+  /* Розмір шрифту для заголовка */
+  font-size: 87px;
+
+  /* Внутрішній відступ заголовка */
+  padding: 10px;
+
+  /* Зовнішній відступ зверху */
+  margin: 0;
+}
+
+.locations-container-text {
+  /* Розмір та вага шрифту для тексту заголовка */
+  font-size: 50px;
+  font-weight: bold;
+
+  /* Колір тексту */
+  color: black;
+
+  /* Зовнішній відступ знизу */
+  margin-bottom: 20px;
+}
+
+.offices-container {
+  /* Використовуємо Flexbox для вирівнювання офісів */
+  display: flex;
+
+  /* Дозволяємо офісам переноситися на новий рядок */
+  flex-wrap: wrap;
+
+  /* Вирівнюємо елементи по центру і додаємо відстань між ними */
+  justify-content: center;
+  gap: 20px;
+}
+
+.office {
+  /* Масштабуємо фонове зображення так, щоб воно заповнювало весь блок */
+  background-size: cover;
+
+  /* Центруємо фонове зображення */
+  background-position: center;
+
+  /* Колір тексту офісу */
+  color: white;
+
+  /* Розмір шрифту для тексту офісу */
+  font-size: 20px;
+
+  /* Вирівнювання тексту по центру */
+  text-align: center;
+
+  /* Використовуємо Flexbox для вирівнювання тексту всередині блока */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Встановлюємо розміри блоків офісів */
+  width: 400px;
+  height: 200px;
+
+  /* Зовнішній відступ навколо офісів */
+  margin: 10px;
+
+  /* Додаємо тінь для надання глибини */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  /* Закруглюємо кути блоків офісів */
+  border-radius: 8px;
+}
+
+/* Встановлюємо фонові зображення для кожного офісу */
+.office:nth-child(1) {
+  background-image: url('ofice-in-kyiv.jpg');
+}
+
+.office:nth-child(2) {
+  background-image: url('ofice-in-lviv.jpg');
+}
+
+.office:nth-child(3) {
+  background-image: url('ofice-in-washington-dc.jpg');
+}
+
+.office:nth-child(4) {
+  background-image: url('ofice-in-london.jpg');
+}
+
+.footer {
+  /* Фоновий колір підвалу */
+  background-color: black;
+
+  /* Колір тексту підвалу */
+  color: white;
+
+  /* Висота підвалу відповідно до змінної */
+  height: var(--footer-height);
+
+  /* Використовуємо Flexbox для вирівнювання тексту по центру підвалу */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
